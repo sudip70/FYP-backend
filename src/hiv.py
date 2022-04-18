@@ -8,7 +8,7 @@ hiv_blueprint = Blueprint('hiv', __name__)
 @hiv_blueprint.route('/hiv/', methods=['GET'])
 def hiv():
     if request.method == "GET":
-        selected_hiv = Medical_cond.query.filter_by(med_id='med4').all()
+        selected_hiv = Medical_cond.query.filter_by(med_id='med13').all()
         collected_data = hiv_data(selected_hiv)
         return {
             "hiv": collected_data

@@ -8,7 +8,7 @@ std_blueprint = Blueprint('std', __name__)
 @std_blueprint.route('/std/', methods=['GET'])
 def std():
     if request.method == "GET":
-        selected_std = Medical_cond.query.filter_by(med_id='med8').all()
+        selected_std = Medical_cond.query.filter_by(med_id='med14').all()
         collected_data = std_data(selected_std)
         return {
             "std": collected_data
