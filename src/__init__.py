@@ -15,6 +15,7 @@ from src.std import std_blueprint
 from src.med_condition import med_condition_blueprint
 from src.medconlist import medconlist_blueprint
 from src.blood_req import bloodreq_blueprint
+from src.post_req import postreq_blueprint
 from flask_sqlalchemy import SQLAlchemy
 from src.medicsdb import db, Users
 
@@ -44,6 +45,7 @@ def create_app(test_config=None):
     app.register_blueprint(med_condition_blueprint)
     app.register_blueprint(medconlist_blueprint)
     app.register_blueprint(bloodreq_blueprint)
+    app.register_blueprint(postreq_blueprint)
 
 
     @app.route("/")

@@ -1,4 +1,3 @@
-from atexit import register
 from flask import Blueprint, request
 from src.medicsdb import Users, db
 from src.Methods.form_validation import validate_email, success_false

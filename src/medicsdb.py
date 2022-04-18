@@ -74,7 +74,6 @@ class blood_req(db.Model):
     phone = db.Column(db.String(15))
     location = db.Column(db.String(50))
     blood_group = db.Column(db.String(3))
-    user_id = db.Column(db.Integer, db.ForeignKey('user_id'))
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
