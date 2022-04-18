@@ -19,9 +19,9 @@ def std_data(data):
     for each in data:
         std.append({
             "med_id":each.med_id,
-            "name":each.name,
-            "description":each.description,
-            "symptoms":each.symptoms,
-            "cure":each.cure
+            "Name":each.name,
+            "Description":each.description,
+            "Symptoms":each.symptoms,
+            "Cure":each.cure
         })
     return {"succes":"true", "std": std, "msg": "std details loaded successfully"}

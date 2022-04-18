@@ -19,9 +19,9 @@ def hiv_data(data):
     for each in data:
         hiv.append({
             "med_id":each.med_id,
-            "name":each.name,
-            "description":each.description,
-            "symptoms":each.symptoms,
-            "cure":each.cure
+            "Name":each.name,
+            "Description":each.description,
+            "Symptoms":each.symptoms,
+            "Cure":each.cure
         })
     return {"succes":"true", "hiv": hiv, "msg": "hiv details loaded successfully"}

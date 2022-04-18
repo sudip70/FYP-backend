@@ -3,7 +3,7 @@ from src.medicsdb import Medical_cond
 
 med_condition_blueprint = Blueprint('med_condition', __name__)
 
-@med_condition_blueprint.route('/med_condition/', methods=['GET','POST'])
+@med_condition_blueprint.route('/med_condition/', methods=['GET'])
 def med_condition():
     if request.method == "GET":
         request_data = request.get_json()
@@ -18,10 +18,10 @@ def med_data(data):
     for each in data:
         med_con.append({
             "med_id":each.med_id,
-            "name":each.name,
-            "description":each.description,
-            "symptoms":each.symptoms,
-            "cure":each.cure
+            "Name":each.name,
+            "Description":each.description,
+            "Symptoms":each.symptoms,
+            "Cure":each.cure
         })
     return {"succes":"true", "medical condition": med_con, "msg": "medical condition details loaded successfully"}
 

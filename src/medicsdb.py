@@ -67,3 +67,17 @@ class Medical_cond(db.Model):
     
     def __repr__(self) -> str:
         return super().__repr__()
+
+class blood_req(db.Model):
+    blood_id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    phone = db.Column(db.String(15))
+    location = db.Column(db.String(50))
+    blood_group = db.Column(db.String(3))
+    user_id = db.Column(db.Integer, db.ForeignKey('user_id'))
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+    
+    def __repr__(self) -> str:
+        return super().__repr__()

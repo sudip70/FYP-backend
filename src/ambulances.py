@@ -18,9 +18,9 @@ def ambulance_data(data):
     for each in data:
         ambulance.append({
             "amb_id":each.amb_id,
-            "org_name":each.org_name,
-            "address":each.address,
-            "phone":each.phone
+            "Organizaion Name":each.org_name,
+            "Address":each.address,
+            "Phone":each.phone
         })
     return {"succes":"true", "ambulance": ambulance, "msg": "ambulance details loaded successfully"}
 

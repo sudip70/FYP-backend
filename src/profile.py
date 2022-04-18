@@ -13,6 +13,6 @@ def profile_view():
         user_now = Users.query.filter_by(email=unique_email).first()
         return {
             "success": "true",
-            "name": user_now.name,
-            "email": user_now.email
+            "Name": user_now.name,
+            "Email": user_now.email
         }

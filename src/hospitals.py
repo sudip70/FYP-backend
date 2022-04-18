@@ -19,11 +19,11 @@ def hospitals_data(data):
     for each in data:
         hospitals.append({
             "hosp_id":each.hosp_id,
-            "name":each.name,
-            "phone":each.phone,
-            "address":each.address,
-            "email":each.email,
-            "website":each.website
+            "Name":each.name,
+            "Phone":each.phone,
+            "Address":each.address,
+            "Email":each.email,
+            "Website":each.website
         })
     return {"succes":"true", "hospitals": hospitals, "msg": "hospital details loaded successfully"}
 

@@ -18,9 +18,10 @@ def doctors_data(data):
     for each in data:
         doctors.append({
             "doc_id":each.doc_id,
-            "name":each.name,
-            "email":each.email,
-            "phone":each.phone,
-            "specialization":each.specialization
+            "Name":each.name,
+            "Email":each.email,
+            "Phone":each.phone,
+            "Hospital":each.Hospital,
+            "Specialization":each.specialization
         })
     return {"succes":"true", "doctors": doctors, "msg": "doctors details loaded successfully"}

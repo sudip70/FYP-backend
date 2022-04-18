@@ -2,6 +2,7 @@ import imp
 import os
 from flask import Flask, request
 from flask_jwt_extended import JWTManager
+from src.medconlist import medconlist
 from src.signup import signup_blueprint
 from src.login import login_blueprint
 from src.ambulances import ambulance_blueprint
@@ -12,6 +13,8 @@ from src.covid import covid_blueprint
 from src.hiv import hiv_blueprint
 from src.std import std_blueprint
 from src.med_condition import med_condition_blueprint
+from src.medconlist import medconlist_blueprint
+from src.blood_req import bloodreq_blueprint
 from flask_sqlalchemy import SQLAlchemy
 from src.medicsdb import db, Users
 
@@ -39,6 +42,8 @@ def create_app(test_config=None):
     app.register_blueprint(hiv_blueprint)
     app.register_blueprint(std_blueprint)
     app.register_blueprint(med_condition_blueprint)
+    app.register_blueprint(medconlist_blueprint)
+    app.register_blueprint(bloodreq_blueprint)
 
 
     @app.route("/")
@@ -54,7 +59,8 @@ def create_app(test_config=None):
             "HIV": "/hiv/ [GET]",
             "Hospitals": "/hospitals/ [GET]",
             "Medical Conditions": "/med_condition/ [GET]",
-            "STD": "/std/ [GET]"
+            "STD": "/std/ [GET]",
+            "Medical Condition List": "/medconlist/ [GET]"
         }
 
     db.app = app
