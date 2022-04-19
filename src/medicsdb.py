@@ -33,6 +33,7 @@ class Doctors(db.Model):
     name = db.Column(db.String(100))
     email = db.Column(db.String(100), unique=True)
     phone = db.Column(db.String(20), unique=True)
+    Hospital = db.Column(db.String(100))
     specialization = db.Column(db.String(1000))
 
     def __init__(self, **kwargs):

@@ -11,6 +11,8 @@ def covid():
         selected_covid = Medical_cond.query.filter_by(med_id='med8').all()
         collected_data = covid_data(selected_covid)
         return {
+            "succes":"true",
+            "msg": "covid details loaded successfully",
             "covid": collected_data
         }
 
@@ -24,4 +26,4 @@ def covid_data(data):
             "Symptoms":each.symptoms,
             "Cure":each.cure
         })
-    return {"succes":"true", "covid": covid, "msg": "covid details loaded successfully"}
+    return covid

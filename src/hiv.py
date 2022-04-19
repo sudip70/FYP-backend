@@ -11,6 +11,8 @@ def hiv():
         selected_hiv = Medical_cond.query.filter_by(med_id='med13').all()
         collected_data = hiv_data(selected_hiv)
         return {
+            "succes":"true",
+            "msg": "hiv details loaded successfully",
             "hiv": collected_data
         }
 
@@ -24,4 +26,4 @@ def hiv_data(data):
             "Symptoms":each.symptoms,
             "Cure":each.cure
         })
-    return {"succes":"true", "hiv": hiv, "msg": "hiv details loaded successfully"}
+    return hiv

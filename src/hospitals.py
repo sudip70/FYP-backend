@@ -11,6 +11,8 @@ def hospitals():
         selected_hospitals = Hospitals.query.all()
         collected_data = hospitals_data(selected_hospitals)
         return {
+            "succes":"true",
+            "msg": "hospital details loaded successfully",
             "hospitals": collected_data
         }
 
@@ -25,5 +27,5 @@ def hospitals_data(data):
             "Email":each.email,
             "Website":each.website
         })
-    return {"succes":"true", "hospitals": hospitals, "msg": "hospital details loaded successfully"}
+    return hospitals
 

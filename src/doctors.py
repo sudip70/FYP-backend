@@ -10,6 +10,8 @@ def doctors():
         selected_doctors = Doctors.query.all()
         collected_data = doctors_data(selected_doctors)
         return {
+            "succes":"true",
+            "msg": "doctors details loaded successfully",
             "doctors": collected_data
         }
 
@@ -24,4 +26,4 @@ def doctors_data(data):
             "Hospital":each.Hospital,
             "Specialization":each.specialization
         })
-    return {"succes":"true", "doctors": doctors, "msg": "doctors details loaded successfully"}
+    return doctors

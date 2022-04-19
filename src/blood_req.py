@@ -10,6 +10,8 @@ def bloodreq():
         selected_bloodreq = blood_req.query.all()
         collected_data = bloodreq_data(selected_bloodreq)
         return {
+            "succes":"true",
+            "msg": "blood request loaded successfully",
             "bloodreq": collected_data
         }
 
@@ -21,7 +23,7 @@ def bloodreq_data(data):
             "Name":each.name,
             "Phone": each.phone,
             "Location":each.location,
-            "Blood Group":each.blood_group
+            "Blood_Group":each.blood_group
         })
-    return {"succes":"true", "Blood Request": blood_req, "msg": "blood request loaded successfully"}
+    return blood_req
 

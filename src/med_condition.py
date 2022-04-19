@@ -11,6 +11,8 @@ def med_condition():
         medical_condition = Medical_cond.query.filter_by(name=name).all()
         collected_data = med_data(medical_condition)
         return {
+            "succes":"true",
+            "msg": "medical condition details loaded successfully",
             "med_condition": collected_data
         }
 def med_data(data):
@@ -23,5 +25,5 @@ def med_data(data):
             "Symptoms":each.symptoms,
             "Cure":each.cure
         })
-    return {"succes":"true", "medical condition": med_con, "msg": "medical condition details loaded successfully"}
+    return med_con
 
