@@ -10,6 +10,8 @@ def ambulance():
         selected_ambulance = Ambulance.query.all()
         collected_data = ambulance_data(selected_ambulance)
         return {
+            "success": "true",
+            "msg": "ambulance details loaded successfully",
             "ambulance": collected_data
         }
 
@@ -18,9 +20,9 @@ def ambulance_data(data):
     for each in data:
         ambulance.append({
             "amb_id":each.amb_id,
-            "Organizaion Name":each.org_name,
-            "Address":each.address,
-            "Phone":each.phone
+            "organizaion_name":each.org_name,
+            "address":each.address,
+            "phone":each.phone
         })
-    return {"succes":"true", "ambulance": ambulance, "msg": "ambulance details loaded successfully"}
+    return ambulance
 

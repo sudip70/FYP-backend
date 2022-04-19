@@ -19,6 +19,7 @@ def login():
         if len(email) > 100:
             return success_false(msg="Email should be less than 100 characters")
         if not validate_email(email):
+            print(email)
             return success_false(msg="Please enter a valid email address")
 
         # now moving to database querying if provided registration data format is correct

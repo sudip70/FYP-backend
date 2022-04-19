@@ -12,6 +12,7 @@ from src.hospitals import hospitals_blueprint
 from src.covid import covid_blueprint
 from src.hiv import hiv_blueprint
 from src.std import std_blueprint
+from src.account_del import account_del_blueprint
 from src.med_condition import med_condition_blueprint
 from src.medconlist import medconlist_blueprint
 from src.blood_req import bloodreq_blueprint
@@ -46,6 +47,7 @@ def create_app(test_config=None):
     app.register_blueprint(medconlist_blueprint)
     app.register_blueprint(bloodreq_blueprint)
     app.register_blueprint(postreq_blueprint)
+    app.register_blueprint(account_del_blueprint)
 
 
     @app.route("/")
@@ -62,7 +64,8 @@ def create_app(test_config=None):
             "Hospitals": "/hospitals/ [GET]",
             "Medical Conditions": "/med_condition/ [GET]",
             "STD": "/std/ [GET]",
-            "Medical Condition List": "/medconlist/ [GET]"
+            "Medical Condition List": "/medconlist/ [GET]",
+            "Account": "/account_del/"
         }
 
     db.app = app
