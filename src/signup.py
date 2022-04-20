@@ -26,7 +26,7 @@ def signup():
         #checking if the email aready registered in database.
         if Users.query.filter_by(email=email).first() is not None:
             #if email already exists.
-            return success_false(msg="This email is already in use!.")
+            return success_false(msg="A user with this email adress already exists in our system. \nPlease check the email..")
 
         users_to_register = Users(name=name, email=email, password=password)
         
@@ -40,7 +40,7 @@ def signup():
             identity=email, expires_delta=False)
         
         
-        return {"success": "true", "msg": "User added.", "email": email, "name": name, "access_token": access_token}
+        return {"success": "true", "msg": "Congratulations! \nUser have been registered successfully.", "email": email, "name": name, "access_token": access_token}
 
     except:
         return success_false()

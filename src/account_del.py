@@ -11,13 +11,13 @@ account_del_blueprint = Blueprint('account_del', __name__)
 @jwt_required()
 def accountDel():
     if request.method == "DELETE":
-        #try:
-        user_email = get_jwt_identity()
-        user = Users.query.filter_by(email=user_email).first()
-        delete_user = Users.query.get(user.user_id)
-        db.session.delete(delete_user)
-        db.session.commit()
-        return {"success": "true", "msg": "User deleted"}
-        #except:
-        return success_false()
+        try:
+            user_email = get_jwt_identity()
+            user = Users.query.filter_by(email=user_email).first()
+            delete_user = Users.query.get(user.user_id)
+            db.session.delete(delete_user)
+            db.session.commit()
+            return {"success": "true", "msg": "Your account has been delete."}
+        except:
+            return success_false()
 
