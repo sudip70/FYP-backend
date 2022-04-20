@@ -6,9 +6,10 @@ med_condition_blueprint = Blueprint('med_condition', __name__)
 @med_condition_blueprint.route('/med_condition/', methods=['GET'])
 def med_condition():
     if request.method == "GET":
-        request_data = request.get_json()
-        name = request_data['name']
-        medical_condition = Medical_cond.query.filter_by(name=name).all()
+        search_con = request.args.get('con')
+       # request_data = request.get_json()
+       # name = request_data['name']
+        medical_condition = Medical_cond.query.filter_by(name=search_con).all()
         collected_data = med_data(medical_condition)
         return {
             "succes":"true",

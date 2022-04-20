@@ -1,11 +1,13 @@
 from flask import Blueprint, request
 from src.medicsdb import blood_req, db
 from src.Methods.form_validation import success_false
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 postreq_blueprint = Blueprint('postreq', __name__)
 
 @postreq_blueprint.route('/postreq/',methods=['POST'])
-def signup():
+@jwt_required()
+def bloodrequest():
     request_data = request.get_json()
     try:
         name = request_data['name']
@@ -31,7 +33,7 @@ def signup():
         db.session.commit()
         
         
-        return {"success": "true", "msg": "Post Added", "Phone": phone, "Name": name, "Location":location, "Blood Group":blood_group}
+        return {"success": "true", "msg": "Your Blood request has been added!!", "Phone": phone, "Name": name, "Location":location, "Blood Group":blood_group}
 
     except:
         return success_false()
