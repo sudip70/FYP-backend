@@ -21,9 +21,9 @@ def covid_data(data):
     for each in data:
         covid.append({
             "med_id":each.med_id,
-            "Name":each.name,
-            "Description":each.description,
-            "Symptoms":each.symptoms,
-            "Cure":each.cure
+            "name":each.name,
+            "description":each.description,
+            "symptoms":each.symptoms,
+            "cure":each.cure
         })
     return covid

@@ -21,11 +21,11 @@ def hospitals_data(data):
     for each in data:
         hospitals.append({
             "hosp_id":each.hosp_id,
-            "Name":each.name,
-            "Phone":each.phone,
-            "Address":each.address,
-            "Email":each.email,
-            "Website":each.website
+            "name":each.name,
+            "phone":each.phone,
+            "address":each.address,
+            "email":each.email,
+            "website":each.website
         })
     return hospitals
 

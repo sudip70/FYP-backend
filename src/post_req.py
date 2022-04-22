@@ -18,12 +18,20 @@ def bloodrequest():
         #to carry furthure process if request is valid
         if len(name) > 50:
             return success_false(msg="Name should be less than 50 characters.")
+        if len(name) < 1:
+            return success_false(msg="Name can not be empty.")
         if len(phone) > 15:
             return success_false(msg="Phone shouldnt be longer that 50 characters.")
+        if len(phone) < 1:
+            return success_false(msg="Phone Number can not be empty.")
         if len(location) > 50:
             return success_false(msg="Location shouldnt be longer than 50 characters.")
+        if len(location) < 1:
+            return success_false(msg="Location can not be empty.")
         if len(blood_group) > 3:
             return success_false(msg="Blood Group shouldnt be longer than 3 characters.")
+        if len(blood_group) < 1:
+            return success_false(msg="Blood Group can not be empty.")
 
 
         post_req = blood_req(name=name, phone=phone, location=location, blood_group=blood_group)
